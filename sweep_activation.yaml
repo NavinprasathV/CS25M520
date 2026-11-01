@@ -1,0 +1,14 @@
+program: train.py
+command:
+  - C:\Projects\vgg6-cifar10\.venv\Scripts\python.exe
+  - ${program}
+  - ${args}
+method: grid
+metric:
+  name: best_val_acc
+  goal: maximize
+parameters:
+  activation:
+    values: [relu, sigmoid, tanh, silu, gelu]
+  epochs:
+    value: 60

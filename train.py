@@ -97,7 +97,7 @@ def main():
     test_loss, test_acc = evaluate(model, test_loader, criterion, device)
     print(f"Best val acc: {best_val:.2f} | Test acc: {test_acc:.2f}")
     wandb.summary["test_acc"] = test_acc
-    wandb.summary["val_acc"] = best_val      # best validation accuracy of this run
+    wandb.summary["best_val_acc"] = best_val   # best validation accuracy of this run
     if args.save_path:
         torch.save(best_state, args.save_path)
     wandb.finish()

@@ -1,0 +1,16 @@
+program: train.py
+command:
+  - C:\Projects\vgg6-cifar10\.venv\Scripts\python.exe
+  - ${program}
+  - ${args}
+method: grid
+metric:
+  name: best_val_acc
+  goal: maximize
+parameters:
+  optimizer:
+    values: [sgd, nesterov, adam, adagrad, rmsprop, nadam]
+  lr:
+    values: [0.1, 0.01, 0.001, 0.0001]
+  epochs:
+    value: 60
